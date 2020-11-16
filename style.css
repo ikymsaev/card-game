@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;  
+}
+*:hover{
+    cursor: default;
+}
+body{
+    background-image: url('assets/img/Grass.jpg');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+#game_container{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transform-origin: 50% 60%;
+    transform: perspective(1000px) rotateX(40deg);
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
+}
+.table{
+    position: relative;
+    background-image: url('assets/img/earlybird_25_2921_oboi_stena_1920x1200.jpg');
+    border-radius: 30px;
+    border: 2px solid #00000069;
+    box-shadow: 0px 45px 30px 0px #0e0e0eba;
+}
+#btn_start_game{
+    position: absolute;
+    height: 40px;
+    width: 120px;
+    top: calc(50% - 20px);
+    left: calc(50% - 60px);
+    background: #307132;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    line-height: 42px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    transition: .4s;
+    outline: none;
+    z-index: 100;
+}   #btn_start_game:hover{
+        background: #d66617;
+        cursor: pointer;
+    }
+.card-item{
+    width: 70px;
+    height: 100px;
+    float: left;
+    margin: -15px;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 35px;
+    z-index: 1;
+    background-size: cover;
+}   .card-item:hover{
+        box-shadow: inset 0 0 3px #614839;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .card-item span{
+        font-size: 26px;
+    }
+
+.player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#player_1{
+    position: relative;
+    bottom: 20%;
+}
+#player_2{
+    position: relative;
+    left: 10%;
+}
+#player_3{
+    position: relative;
+    top: 10%;
+}
+#player_4{
+    position: relative;
+    right: 10%;
+}
+#player_2, #player_4{
+    flex-direction: column;
+    align-items: center;
+}
+#player_2 .card-item, #player_4 .card-item{
+    transform: rotate(90deg);
+    margin: -30px;
+}
+
+.stake{
+    position: absolute;
+    height: 60%;
+    width: 60%;
+    top: 20%;
+    left: 20%;
+}
+#next_step_btn{
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    z-index: 10;
+    top: 60%;
+    left: calc(50% - 75px);
+    text-align: center;
+    display: none;
+    background: #307132;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 800;
+    transition: .4s;
+    outline: none;
+}#next_step_btn:hover{
+    background: #d66617;
+    cursor: pointer;
+}
+.score-display{
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    background: #843425d9;
+    padding: 3px 5px;
+    border-radius: 5px;
+}.score-display span{
+    margin: 10px 0;
+    text-align: center;
+}
+.points-display{
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    background: #2e2584d9;
+    padding: 3px 5px;
+    border-radius: 5px;
+}.points-display span{
+    margin: 10px 0;
+    text-align: center;
+}
+.alert{
+    position: absolute;
+    width: 50%;
+    padding: 20px;
+    left: calc(25% - 20px);
+    top: 30%;
+    text-align: center;
+    color: #fff;
+    background: #1616179c;
+    border: 1px solid;
+    border-radius: 10px;
+    display: none;
+    opacity: 0;
+    transition: 1s;
+    z-index: 15;
+}
+.trump_display_cnt{
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    width: 50%;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+}
+#trump_display{
+    color: #000; 
+    font-size: 70px;
+}
+.next_step{
+    box-shadow: rgba(157, 157, 206, 0.49) 0px 0px 15px 5px;
+}
